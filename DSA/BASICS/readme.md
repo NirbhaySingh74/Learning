@@ -54,8 +54,59 @@ We don’t have pointers and we cannot access out of bound arrays (you get Array
 
 ## Multithreading
 
-ava supports multithreading. Multithreading is a Java feature that allows concurrent execution of two or more parts of a program for maximum utilisation of CPU.
+Java supports multithreading. Multithreading is a Java feature that allows concurrent execution of two or more parts of a program for maximum utilisation of CPU.
 
 ## High Performance:
 
 Java is a high level language, Its performance has been further improved, thanks to Just-In-Time (JIT) compilers and other performance improvements.
+
+# History of Java
+
+## Original developer and programming name :
+
+James Gosling is considered the original developer of Java language. He is also known as father of Java. He started on this in early 1990s. He originally named it Greentalk and the extension was .gt.
+
+## Programming language renamed from Greentalk to Oak:
+
+When Green team (James Gosling, Mike Sheridan and Patrick Naughton) started working on it, it was renamed to Oak. Oak is a tree name, which is considered a symbol of strength and is a national tree in many countries such as U.S.A., France, Germany, Romania, etc.
+
+## Again renamed from Oak to Java in 1995:
+
+The project is again renamed from Oak to Java in 1995 as Oak was a trademark for other organization.
+
+## Original and first version of Java:
+
+JDK first version alpha & beta was released in 1995 by Sun Microsystems.
+
+## Key Milestones:
+
+1996: The Java Development Kit (JDK) 1.0 was released. Java quickly became popular due to its many features such as robustness, performance, security etc.
+1997: JDK 1.1 was released, It came with out of the box features such as JDBC (Java Database Connectivity) API, RMI (Remote Method Invocation) and JavaBeans.
+1998: JDK 1.2 was released, It came with various Java editions with the introducing of Java Platform, Standard Edition (Java SE), the Java Platform, Enterprise Edition (Java EE), and the Java Platform, Micro Edition (Java ME).
+2004: JDK 1.5 was released, It was marketed as Java 5.0, introducing some popular java features such as generics, enhanced for loop etc.
+2006: Sun Microsystems made the JVM, compiler, and key libraries open source under the GNU General Public License (GPL).
+2009: Sun Microsystems was acquired by Oracle Corporation, this deal was completed in 2010. Oracle continued the development of Java.
+
+## Java Version History
+
+VERSION RELEASE DATE
+
+JDK Alpha & Beta 1995
+JDK 1.0 January 1996
+JDK 1.1 February 1997
+J2SE 1.2 December 1998
+J2SE 1.3 May 2000
+J2SE 1.4 February 2002
+Java SE 5 September 2004
+Java SE 6 December 2006
+Java SE 7 July 2011
+Java SE 8 March 2014
+Java SE 9 September 2017
+March 2018
+Java SE 11 September 2018
+Java SE 12 March 2019
+Java SE 13 September 2019
+Java SE 14 March 2020
+Java SE 15 September 2020
+Java SE 16 March 2021
+Java SE 17 September 2021
