@@ -32,6 +32,14 @@ public class Condition {
             System.out.println(i);
         }
     }
+
+    public static void print1ToNWhile(int n){
+        int i = 1;
+        while (i <= n) {
+            System.out.println(i);
+            i++;
+        }
+    }
     public static void main(String[] args) {
         // Scanner sc = new Scanner(System.in);
         // System.out.println("Enter First Number");
@@ -39,7 +47,8 @@ public class Condition {
         // System.out.println("Enter Second Number");
         // int secondNum = sc.nextInt();
         //  whichGreater(firstNum, secondNum);
-       checkSwitch(2);
-       print1ToN(10);
+    //    checkSwitch(2);
+    //    print1ToN(10);
+    print1ToNWhile(10);
     }
 }

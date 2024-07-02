@@ -429,3 +429,15 @@ This is an infinite loop as the condition would never return false. The initiali
 for ( ; ; ) {
 // statement(s)
 }
+
+# While loop in Java with examples
+
+In this tutorial, you will learn while loop in java with the help of examples. Similar to for loop, the while loop is used to execute a set of statements repeatedly until the specified condition returns false.
+
+Syntax of while loop
+while(condition)
+{
+statement(s); //block of code
+}
+
+In while loop, condition is evaluated first and if it returns true then the statements inside while loop execute. When condition returns false, the control comes out of loop and jumps to the next statement after while loop.
