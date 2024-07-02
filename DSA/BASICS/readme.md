@@ -321,27 +321,28 @@ if(condition*1) {
 statement(s);
 }
 else if(condition*2) {
-/* execute this if condition*1 is not met and
-* condition*2 is met
-*/
-statement(s);
-}
-else if(condition*3) {
-/* execute this if condition*1 & condition_2 are
-* not met and condition*3 is met
-*/
-statement(s);
-}
-.
-.
-.
-else {
-/_ if none of the condition is true
-_ then these statements gets executed
-\*/
-statement(s);
-}
-Note: The most important point to note here is that in if-else-if statement, as soon as the condition is met, the corresponding set of statements get executed, rest gets ignored. If none of the condition is met then the statements inside “else” gets executed.
+/* execute this if condition\*1 is not met and
+
+- condition*2 is met
+  */
+  statement(s);
+  }
+  else if(condition*3) {
+  /* execute this if condition\*1 & condition_2 are
+- not met and condition*3 is met
+  */
+  statement(s);
+  }
+  .
+  .
+  .
+  else {
+  /_ if none of the condition is true
+  _ then these statements gets executed
+  \*/
+  statement(s);
+  }
+  Note: The most important point to note here is that in if-else-if statement, as soon as the condition is met, the corresponding set of statements get executed, rest gets ignored. If none of the condition is met then the statements inside “else” gets executed.
 
 Example of if-else-if
 public class IfElseIfExample {
@@ -373,3 +374,20 @@ Check out these related java examples:
 Java Program to find the largest of three numbers using if..else..if
 Java Program to check if number is positive or negative
 Java Program to check if number is even or odd
+
+# Switch Case statement in Java with example
+
+Switch case statement is used when we have number of options (or choices) and we may need to perform a different task for each choice.
+
+switch (variable or an integer expression)
+{
+case constant:
+//Java code
+;
+case constant:
+//Java code
+;
+default:
+//Java code
+;
+}
