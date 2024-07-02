@@ -26,6 +26,12 @@ public class Condition {
                 System.out.println("Invalid day.");
         }
     }
+
+    public static void print1ToN(int n) {
+        for(int i=1;i<=n;i++){
+            System.out.println(i);
+        }
+    }
     public static void main(String[] args) {
         // Scanner sc = new Scanner(System.in);
         // System.out.println("Enter First Number");
@@ -34,5 +40,6 @@ public class Condition {
         // int secondNum = sc.nextInt();
         //  whichGreater(firstNum, secondNum);
        checkSwitch(2);
+       print1ToN(10);
     }
 }

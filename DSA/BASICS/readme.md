@@ -391,3 +391,41 @@ default:
 //Java code
 ;
 }
+
+# For loop in Java with example
+
+For loop is used to execute a set of statements repeatedly until a particular condition returns false. In Java we have three types of basic loops: for, while and do-while. In this tutorial you will learn about for loop in Java. You will also learn nested for loop, enhanced for loop and infinite for loop with examples
+
+for(initialization; condition ; increment/decrement)
+{
+statement(s);
+}
+
+**Initialization** : In the initialization part, variables like loop counter (you will generally see i and j in loops, these are the loop counters) are initialized. This is an optional part of the loop as the variables can be initialized before the loop. This executes only once when the loop starts.
+
+**Condition**: This is one of the important part of the loop. This condition determines till when the loop should keep repeating. The loop keeps repeating until the condition becomes false.
+
+**Increment/Decrement**: In this part of the loop declaration, you can specify the increment or decrement of loop counter. This is to modify the loop counter value so that at one point condition becomes false and the loop ends.
+
+Statement: The statements inside the loop body keeps executing for each iteration of the loop until the loop stops.
+
+# Infinite for loop
+
+A loop that never stops executing is called infinite loop. This happens when the condition expression defined in loop never returns false. The following example will help you understand the importance of Boolean expression and increment/decrement operation co-ordination:
+
+class ForLoopExample2 {
+public static void main(String args[]){
+for(int i=1; i>=1; i++){
+System.out.println("The value of i is: "+i);
+}
+}
+}
+
+This is an infinite loop as the condition would never return false. The initialization step is setting up the value of variable i to 1, since we are incrementing the value of i, it would always be greater than 1 (the Boolean expression: i>1) so it would never return false. This would eventually lead to the infinite loop condition. Thus it is important to see the co-ordination between Boolean expression and increment/decrement operation to determine whether the loop would terminate at some point of time or not.
+
+# Here is another example of infinite for loop:
+
+// infinite loop
+for ( ; ; ) {
+// statement(s)
+}
