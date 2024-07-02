@@ -110,3 +110,48 @@ Java SE 14 March 2020
 Java SE 15 September 2020
 Java SE 16 March 2021
 Java SE 17 September 2021
+
+# C++ vs Java – Difference between C++ and Java
+
+In this post, you will learn the difference between C++ and Java. There are many similarities and differences between these programming languages.
+
+Before we see the difference between them, lets look have a look the basic details about both of these programming languages.
+
+# C++ language
+
+C++ is the first programming language that introduced the concept of object oriented programming, it was C++ that introduced the whole idea about objects and classes. C++ initially known as “C with classes” as it was developed as an advanced version of C, with added object oriented features as an improvement.
+
+C++ language was developed by Bjarne Stroustrup at AT & T Bell Laboratories. The first commercial C++ compiler known as Cfront, was released in 1985.
+
+# Java language
+
+Java programming language was developed by James Gosling at Sun Microsystems in early 1990. Java was initially developed for digital devices such television, remote, set-top boxes.
+
+Java project initially named “Greentalk” by James Gosling, it got renamed to “Oak” later. in 1995 Sun Microsystems renamed it again from Oak to java as “Oak” was a registered trademark for another organization.
+
+# C++ Program
+
+## Let’s have a look at a very simple C++ program that prints a message “Hello World!” on the screen.
+
+#include <iostream>  
+using namespace std;  
+int main() {  
+ cout << "Hello World!";  
+ return 0;  
+}  
+Output:
+
+Hello World!
+
+# Java Program
+
+## Let’s write the same program in Java programming language.
+
+class HelloWorld{  
+ public static void main(String args[]){  
+ System.out.println("Hello World!");  
+ }  
+}  
+Output:
+
+Hello World!
