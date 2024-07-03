@@ -4,6 +4,8 @@ function greet(name: String) {
 // greet("Nirbhay");
 
 //type infrence
+// interfaces can implemented by classes
+// types let you do union and intersecion
 function sum(firstNum: number, secondNum: number): number {
   return firstNum + secondNum;
 }
@@ -44,6 +46,7 @@ function sum(firstNum: number, secondNum: number): number {
 // }
 
 //second way
+//using union
 type GreetArg = number | string;
 function greet2(id: GreetArg) {
   console.log(id);
@@ -97,3 +100,28 @@ const user: number[] = [20, 22, 21, 15, 13, 19, 11];
 
 const legalUser = user.filter((num) => num > 18);
 console.log(legalUser);
+
+//intersection
+
+interface BuisnessPartner {
+  name: string;
+  creditScore: number;
+}
+interface UserIdentity {
+  id: number;
+  email: string;
+}
+
+type Employee = BuisnessPartner & UserIdentity;
+const signContract = (employee: Employee): void => {
+  console.log(
+    "Contract Signed by " + employee.name + " with email" + employee.email
+  );
+};
+
+signContract({
+  name: "Nirbhay",
+  creditScore: 10000,
+  id: 20,
+  email: "nirbhaysingh943012@gmail.com",
+});
