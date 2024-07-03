@@ -48,8 +48,8 @@ type GreetArg = number | string;
 function greet2(id: GreetArg) {
   console.log(id);
 }
-greet2(5);
-greet2("4");
+// greet2(5);
+// greet2("4");
 
 //type in typescript
 // In TypeScript, type is a keyword used to define custom types. These custom types can represent a variety of shapes and structures, including object types, union types, intersection types, and more. Using type, you can create aliases for any valid TypeScript type, making your code more readable and easier to maintain.
@@ -61,8 +61,39 @@ type User = {
   age?: number; // Optional property
 };
 
-const user: User = {
-  id: 1,
-  name: "John Doe",
-  email: "john.doe@example.com",
-};
+// const user: User = {
+//   id: 1,
+//   name: "John Doe",
+//   email: "john.doe@example.com",
+// };
+
+// Array
+let numbers: number[] = [1, 2, 3, 4, 5];
+let strings: string[] = ["apple", "banana", "cherry"];
+
+//multidimensional array
+let matrix: number[][] = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+type NumberArr = number[];
+
+function maxValue(arr: NumberArr) {
+  let max = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+const printMaxValue = maxValue([1, 2, 3, 4]);
+console.log(printMaxValue);
+
+const user: number[] = [20, 22, 21, 15, 13, 19, 11];
+
+const legalUser = user.filter((num) => num > 18);
+console.log(legalUser);
