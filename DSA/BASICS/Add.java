@@ -46,9 +46,38 @@ class java {
         }
     }
 
+    public static void simpleInterest(int p, int r, int t) {
+        int si = (p * r * t) / 100;
+        System.out.println("simple Interest - " + si);
+    }
+
+    public static int FindPerimeterofRectangle(int a, int b) {
+        int findPerimiter = 2 * (a + b);
+        return findPerimiter;
+    }
+
+    public static int findFactorial(int x) {
+        int factorial = 1;
+        for (int i = x; i >= 1; i--) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+
+    public static void swap(int x, int y) {
+        x = x + y;
+        y = x - y;
+        x = x - y;
+        System.out.println("x = " + x + " y = " + y);
+    }
+
     public static void main(String[] args) {
         int x = 20;
         // AddTwoBinary();
-        AddTwoFloat();
+        // AddTwoFloat();
+        // simpleInterest(1000, 5, 3);
+        // System.out.println(FindPerimeterofRectangle(10, 20));
+        // System.out.println(findFactorial(5));
+        swap(10, 20);
     }
 }
