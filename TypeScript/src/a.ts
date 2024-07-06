@@ -94,12 +94,12 @@ function maxValue(arr: NumberArr) {
 }
 
 const printMaxValue = maxValue([1, 2, 3, 4]);
-console.log(printMaxValue);
+// console.log(printMaxValue);
 
 const user: number[] = [20, 22, 21, 15, 13, 19, 11];
 
 const legalUser = user.filter((num) => num > 18);
-console.log(legalUser);
+// console.log(legalUser);
 
 //intersection
 
@@ -119,9 +119,58 @@ const signContract = (employee: Employee): void => {
   );
 };
 
-signContract({
-  name: "Nirbhay",
-  creditScore: 10000,
-  id: 20,
-  email: "nirbhaysingh943012@gmail.com",
-});
+// signContract({
+//   name: "Nirbhay",
+//   creditScore: 10000,
+//   id: 20,
+//   email: "nirbhaysingh943012@gmail.com",
+// });
+
+// Enum
+
+// enum Direction {
+//   Up,
+//   Down,
+//   Left,
+//   Right,
+// }
+
+// let direction: Direction = Direction.Left;
+// console.log(direction);
+
+// enum Direction {
+//   Up = 1,
+//   Down = 3,
+//   Left = 5,
+//   Right = 7,
+// }
+
+// let direction: Direction = Direction.Left;
+// console.log(direction); // Output: 5
+
+enum Direction {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT",
+}
+
+let direction: Direction = Direction.Right;
+console.log(direction);
+
+enum UserRole {
+  Admin,
+  User,
+  Guest,
+}
+function checkUserRole(role: UserRole) {
+  if (role === UserRole.Admin) {
+    console.log("User is an Admin.");
+  } else if (role === UserRole.User) {
+    console.log("User is a regular user.");
+  } else {
+    console.log("User is a guest.");
+  }
+}
+
+checkUserRole(UserRole.User);
