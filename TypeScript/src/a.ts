@@ -156,7 +156,7 @@ enum Direction {
 }
 
 let direction: Direction = Direction.Right;
-console.log(direction);
+// console.log(direction);
 
 enum UserRole {
   Admin,
@@ -173,4 +173,16 @@ function checkUserRole(role: UserRole) {
   }
 }
 
-checkUserRole(UserRole.User);
+// checkUserRole(UserRole.User);
+
+//geeric
+function getFirstElement<T>(arr: T[]) {
+  return arr[0];
+}
+function getFirstElement2<T>(arr: T[]) {
+  return arr[0];
+}
+const el = getFirstElement(["Nirbhay Singh", "Kunal arya"]);
+console.log(el.toLowerCase());
+const el2 = getFirstElement2([10, 20, 30]);
+console.log(el2);
