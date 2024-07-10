@@ -17,7 +17,7 @@ async function createUsersTable() {
         `);
   console.log(result);
 }
-createUsersTable();
+// createUsersTable();
 
 //Async function to insert data into a table
 async function insertData() {
@@ -37,8 +37,31 @@ async function insertData() {
     console.log("Insertion success", res);
   } catch (error) {
     console.error("Error during insertion:", error);
-  } finally {
     await client.end(); //close the client connection
   }
 }
-insertData();
+
+//Async function to fetch user data from the database given an email
+async function getUser(email) {
+  const client = new Client({
+    host: "localhost",
+    port: 5432,
+    database: "postgres",
+    user: "postgres",
+    password: "Nirbhay",
+  });
+
+  await client.connect(); //Ensure client connection is established
+  const query = "SELECT * FROM users WHERE email = $1";
+  const result = await client.query(query, [email]);
+
+  if (result.rows.length > 0) {
+    console.log("User found:", result.rows[0]); //output user data
+    return result.rows[0]; //Return the user data
+  } else {
+    console.log("No user found with the given email.");
+    return null;
+  }
+}
+// insertData();
+getUser("johndoe@example.com").catch(console.error);
