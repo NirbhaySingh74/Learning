@@ -9,8 +9,8 @@ interface Todo {
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([
-    { text: "Learn about React", completed: false },
-    { text: "Meet friend for lunch", completed: false },
+    { text: "Wake up on time", completed: false },
+    { text: "Done with workout", completed: false },
     { text: "Build really cool todo app", completed: false },
   ]);
 
