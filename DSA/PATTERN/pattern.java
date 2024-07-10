@@ -62,7 +62,7 @@ public class pattern {
                 System.out.print(" ");
             }
             // for star
-            for (int k = 1; k <= (n - i); k++) {
+            for (int k = 1; k <= (2 * i) - 1; k++) {
                 System.out.print("*");
             }
             // for space
