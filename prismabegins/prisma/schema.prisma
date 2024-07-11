@@ -33,7 +33,7 @@ model Todo{
 // CREATE TABLE User(
 //  id SERIAL PRIMARY KEY,
 //  email VARCHAR(255) UNIQUE NOT NULL,
-// firstName VARCHAR(255) OPTIONAL,
-// lastName VARCHAR(255) OPTIONAL,
+// firstName VARCHAR(255),
+// lastName VARCHAR(255),
 // password VARCHAR(255) NOT NULL
 // )
