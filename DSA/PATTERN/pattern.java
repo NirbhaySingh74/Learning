@@ -186,6 +186,19 @@ public class pattern {
         }
     }
 
+    public static void IncreasingLetterTrianglePattern(int n){
+        int asciiValue = 65;
+         for(int i = 1; i<= n; i++) {
+             
+            for(int j = 1; j <= i; j++) {
+                char character = (char) asciiValue;
+                System.out.print(character +" ");
+                asciiValue++;
+            }
+            System.out.println();
+            asciiValue = 65;
+         }
+    }
 
 
     public static void main(String[] args) {
@@ -201,6 +214,7 @@ public class pattern {
         // HalfDiamondStarPattern(5);
         // binaryNumberTrianglePattern(5);
         // NumberCrownPattern(6);
-        IncreasingNumberTrianglePattern(5);
+        // IncreasingNumberTrianglePattern(5);
+        IncreasingLetterTrianglePattern(5);
     }
 }
