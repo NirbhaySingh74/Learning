@@ -140,6 +140,19 @@ public class pattern {
         }
     }
 
+    public static void binaryNumberTrianglePattern(int n) {
+        for (int i = 1; i <= n; i++) {
+            int start;
+            start = (i % 2 != 0) ? 1 : 0;
+            for (int j = 1; j <= i; j++) {
+                System.out.print(start);
+                start = (start == 1) ? 0 : 1;
+            }
+            System.out.println();
+
+        }
+    }
+
     public static void main(String[] args) {
         // first(5);
         // second(5);
@@ -150,6 +163,7 @@ public class pattern {
         // starPyramid(5);
         // invertStarPyramid(5);
         // diamondStarPyramid(5);
-        HalfDiamondStarPattern(5);
+        // HalfDiamondStarPattern(5);
+        binaryNumberTrianglePattern(5);
     }
 }
