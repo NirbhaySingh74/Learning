@@ -18,4 +18,18 @@ async function insertUser(
   console.log(res);
 }
 
-insertUser("nirbahy@gmail.com", "Nirbhay#12", "Nirbhay", "Singh");
+insertUser("Kunal@gmail.com", "Kunal#12", "Kunal", "Arya");
+
+// Function to get all users
+async function getAllUsers() {
+  try {
+    const users = await prisma.user.findMany();
+    console.log(users);
+    return users;
+  } catch (error) {
+    console.error(error);
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+getAllUsers();
