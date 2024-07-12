@@ -51,5 +51,14 @@ async function updateUser(email: string) {
   }
 }
 
+// Delete a single record
+async function deleteUSer(email: string) {
+  const deleteUser = await prisma.user.delete({
+    where: {
+      email,
+    },
+  });
+}
 // updateUser("sachin@example.com");
+// deleteUSer("john@gmail.com");
 getAllUsers();
