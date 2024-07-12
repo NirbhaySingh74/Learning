@@ -175,6 +175,19 @@ public class pattern {
         }
     }
 
+    public static void IncreasingNumberTrianglePattern(int n){
+        int start = 1;
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= i; j++) {
+                System.out.print(start +" ");
+                start++;
+            }
+            System.out.println();
+        }
+    }
+
+
+
     public static void main(String[] args) {
         // first(5);
         // second(5);
@@ -187,6 +200,7 @@ public class pattern {
         // diamondStarPyramid(5);
         // HalfDiamondStarPattern(5);
         // binaryNumberTrianglePattern(5);
-        NumberCrownPattern(6);
+        // NumberCrownPattern(6);
+        IncreasingNumberTrianglePattern(5);
     }
 }
