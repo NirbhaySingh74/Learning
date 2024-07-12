@@ -18,7 +18,7 @@ async function insertUser(
   console.log(res);
 }
 
-insertUser("Kunal@gmail.com", "Kunal#12", "Kunal", "Arya");
+// insertUser("Kunal@gmail.com", "Kunal#12", "Kunal", "Arya");
 
 // Function to get all users
 async function getAllUsers() {
@@ -32,4 +32,24 @@ async function getAllUsers() {
     await prisma.$disconnect();
   }
 }
+
+async function updateUser(email: string) {
+  try {
+    const updatedUser = await prisma.user.updateMany({
+      where: { email },
+      data: {
+        email: "john@gmail.com",
+        firstName: "John",
+      },
+    });
+    console.log("User updated:", updatedUser);
+    return updatedUser;
+  } catch (error) {
+    console.error("Error updating user:", error);
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+
+// updateUser("sachin@example.com");
 getAllUsers();
