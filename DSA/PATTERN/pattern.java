@@ -225,6 +225,35 @@ public class pattern {
         }
     }
 
+    public static void AlphaHillPattern(int n) {
+        int asciiValue = 65;
+        for (int i = 1; i <= n; i++) {
+            //space
+            for (int j = 1; j <= (n - i); j++) {
+                System.out.print(" ");
+            }
+            //character print
+            for (int k = 1; k <= i; k++) {
+                char character = (char) asciiValue;
+                System.out.print(character);
+                asciiValue = asciiValue + 1;
+            }
+            asciiValue = asciiValue - 1;
+            //character print again
+            for (int k = 1; k <= (i - 1); k++) {
+                asciiValue = asciiValue - 1;
+                char character = (char) asciiValue;
+                System.out.print(character);
+            }
+            //space
+            for (int j = 1; j <= (n - i); j++) {
+                System.out.print(" ");
+            }
+            asciiValue = 65;
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // first(5);
         // second(5);
@@ -241,6 +270,7 @@ public class pattern {
         // IncreasingNumberTrianglePattern(5);
         // IncreasingLetterTrianglePattern(5);
         // ReverseLetterTrianglePattern(5);
-        AlphaRampPattern(5);
+        // AlphaRampPattern(5);
+        AlphaHillPattern(5);
     }
 }
