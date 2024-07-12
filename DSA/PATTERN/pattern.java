@@ -125,6 +125,21 @@ public class pattern {
         }
     }
 
+    public static void HalfDiamondStarPattern(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // first(5);
         // second(5);
@@ -134,6 +149,7 @@ public class pattern {
         // six(5);
         // starPyramid(5);
         // invertStarPyramid(5);
-        diamondStarPyramid(5);
+        // diamondStarPyramid(5);
+        HalfDiamondStarPattern(5);
     }
 }
