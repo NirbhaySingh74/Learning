@@ -153,6 +153,28 @@ public class pattern {
         }
     }
 
+    public static void NumberCrownPattern(int n) {
+        for (int i = 1; i <= n; i++) {
+            // value
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j);
+            }
+            // space
+            for (int k = 1; k <= (n - i); k++) {
+                System.out.print(" ");
+            }
+            // space again
+            for (int k = 1; k <= (n - i); k++) {
+                System.out.print(" ");
+            }
+            // value
+            for (int j = i; j >= 1; j--) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         // first(5);
         // second(5);
@@ -164,6 +186,7 @@ public class pattern {
         // invertStarPyramid(5);
         // diamondStarPyramid(5);
         // HalfDiamondStarPattern(5);
-        binaryNumberTrianglePattern(5);
+        // binaryNumberTrianglePattern(5);
+        NumberCrownPattern(6);
     }
 }
