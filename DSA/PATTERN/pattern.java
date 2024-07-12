@@ -1,6 +1,7 @@
 package DSA.PATTERN;
 
 public class pattern {
+
     public static void first(int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= n; j++) {
@@ -175,37 +176,23 @@ public class pattern {
         }
     }
 
-    public static void IncreasingNumberTrianglePattern(int n){
+    public static void IncreasingNumberTrianglePattern(int n) {
         int start = 1;
-        for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= i; j++) {
-                System.out.print(start +" ");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(start + " ");
                 start++;
             }
             System.out.println();
         }
     }
 
-    public static void IncreasingLetterTrianglePattern(int n){
+    public static void IncreasingLetterTrianglePattern(int n) {
         int asciiValue = 65;
-         for(int i = 1; i<= n; i++) {
-             
-            for(int j = 1; j <= i; j++) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
                 char character = (char) asciiValue;
-                System.out.print(character +" ");
-                asciiValue++;
-            }
-            System.out.println();
-            asciiValue = 65;
-         }
-    }
-
-    public static void ReverseLetterTrianglePattern(int n) {
-        int asciiValue = 65;
-        for(int i = n; i >= 1; i--) {
-            for(int j = 1; j <= i; j++) {
-                char character = (char) asciiValue;
-                System.out.print(character +" ");
+                System.out.print(character + " ");
                 asciiValue++;
             }
             System.out.println();
@@ -213,6 +200,30 @@ public class pattern {
         }
     }
 
+    public static void ReverseLetterTrianglePattern(int n) {
+        int asciiValue = 65;
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                char character = (char) asciiValue;
+                System.out.print(character + " ");
+                asciiValue++;
+            }
+            System.out.println();
+            asciiValue = 65;
+        }
+    }
+
+    public static void AlphaRampPattern(int n) {
+        int asciiValue = 65;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                char character = (char) asciiValue;
+                System.out.print(character + " ");
+            }
+            System.out.println();
+            asciiValue++;
+        }
+    }
 
     public static void main(String[] args) {
         // first(5);
@@ -229,6 +240,7 @@ public class pattern {
         // NumberCrownPattern(6);
         // IncreasingNumberTrianglePattern(5);
         // IncreasingLetterTrianglePattern(5);
-        ReverseLetterTrianglePattern(5);
+        // ReverseLetterTrianglePattern(5);
+        AlphaRampPattern(5);
     }
 }
