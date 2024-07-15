@@ -77,3 +77,21 @@ export const login = async (req: Request, res: Response) => {
     await prisma.$disconnect();
   }
 };
+
+export const logout = async (req: Request, res: Response) => {
+  try {
+    // Clear the jwt cookie
+    res.cookie("jwt", "", {
+      maxAge: 0,
+      httpOnly: true,
+      sameSite: "strict",
+      secure: process.env.NODE_ENV !== "development",
+    });
+
+    console.log("Logged out");
+    res.status(200).json({ message: "Logged out successfully" });
+  } catch (error) {
+    console.error("Error logging out user:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
