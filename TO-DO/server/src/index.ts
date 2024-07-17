@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import cors from "cors";
+import userRoute from "./routes/user.roue.js";
 const app = express();
 
 dotenv.config();
@@ -18,3 +19,4 @@ app.listen(PORT, () => {
 });
 
 app.use("/api", authRoutes);
+app.use("/api", userRoute);
