@@ -34,7 +34,7 @@ const Login = () => {
 
         toast.success("User logged in successfully");
         reset();
-        navigate("/");
+        navigate("/todo");
       }
     } catch (error: any) {
       console.log(error);
