@@ -9,7 +9,7 @@ export const getUser = (req: Request, res: Response) => {
     const { id, email, firstName, lastName, avatar } = req.user;
 
     res.status(200).json({
-      message: "You have access to this protected route",
+      message: `Hii ${firstName}`,
       user: { id, email, firstName, lastName, avatar },
     });
   } catch (error: any) {

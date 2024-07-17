@@ -30,7 +30,7 @@ const Login = () => {
         headers: { "Content-Type": "application/json" },
       });
       if (res.status === 200) {
-        console.log(res.data);
+        // console.log(res.data);
 
         toast.success("User logged in successfully");
         reset();
