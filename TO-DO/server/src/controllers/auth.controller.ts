@@ -3,6 +3,11 @@ import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
 import { generateTokenAndSetCookie } from "../utils/generateToken.js";
 const prisma = new PrismaClient();
+// Function to generate avatar URL
+const generateAvatarUrl = (email: string): string => {
+  const uniqueId = Buffer.from(email).toString("base64");
+  return `https://avatar.iran.liara.run/public/boy`;
+};
 export const signup = async (req: Request, res: Response) => {
   try {
     const { email, firstName, lastName, password } = req.body;
@@ -22,6 +27,8 @@ export const signup = async (req: Request, res: Response) => {
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    // Generate avatar URL
+    const avatar = generateAvatarUrl(email);
     // Create the user
     const newUser = await prisma.user.create({
       data: {
@@ -29,6 +36,7 @@ export const signup = async (req: Request, res: Response) => {
         firstName,
         lastName,
         password: hashedPassword,
+        avatar,
       },
     });
     res
