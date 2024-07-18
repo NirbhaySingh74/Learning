@@ -5,6 +5,7 @@ CREATE TABLE "User" (
     "firstName" TEXT,
     "lastName" TEXT,
     "password" TEXT NOT NULL,
+    "avatar" TEXT,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
 );
@@ -22,3 +23,6 @@ CREATE TABLE "Todo" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- AddForeignKey
+ALTER TABLE "Todo" ADD CONSTRAINT "Todo_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
