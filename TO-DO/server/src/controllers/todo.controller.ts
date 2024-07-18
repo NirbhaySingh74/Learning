@@ -30,6 +30,25 @@ export const removeTodo = async (req: Request, res: Response) => {
     });
     res.status(204).json({ message: "Todo Removed" });
   } catch (error) {
-    res.status(500).json({ error: "Failed to remove todo" });
+    res.status(500).json({ message: "Failed to remove todo" });
+  }
+};
+
+// update ToDo
+export const updateTodo = async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const { title, description, done } = req.body;
+  try {
+    const updateTodo = await prisma.todo.update({
+      where: { id: parseInt(id) },
+      data: {
+        title,
+        description: description || undefined,
+        done,
+      },
+    });
+    res.status(200).json({ message: "Todo updated", updateTodo });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to update todo" });
   }
 };
