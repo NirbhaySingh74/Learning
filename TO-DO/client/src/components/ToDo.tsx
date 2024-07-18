@@ -5,8 +5,10 @@ import Header from "./Header";
 import axios from "axios";
 
 interface Todo {
-  text: string;
-  completed: boolean;
+  id: number;
+  title: string;
+  description?: string;
+  done: boolean;
 }
 
 interface User {
@@ -20,27 +22,53 @@ const ToDo: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const getUser = async () => {
-    const res = await axios.get("/api/user");
-    setUser(res.data.user);
-    console.log("User:", res.data.user);
+    try {
+      const res = await axios.get("/api/user");
+      setUser(res.data.user);
+      console.log("User:", res.data.user);
+    } catch (error) {
+      console.error("Error fetching user:", error);
+    }
   };
 
-  const addTodo = (text: string) => {
-    const newTodos = [...todos, { text, completed: false }];
-
-    setTodos(newTodos);
+  const fetchTodos = async () => {
+    try {
+      const res = await axios.get("/api/alltodo");
+      setTodos(res.data);
+    } catch (error) {
+      console.error("Error fetching todos:", error);
+    }
   };
 
-  const completeTodo = (index: number) => {
-    const newTodos = [...todos];
-    newTodos[index].completed = !newTodos[index].completed;
-    setTodos(newTodos);
+  const addTodo = async (title: string) => {
+    try {
+      const res = await axios.post("/api/addtodos", { title });
+      setTodos([...todos, res.data]);
+    } catch (error) {
+      console.error("Error adding todo:", error);
+    }
   };
 
-  const removeTodo = (index: number) => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
+  const completeTodo = async (id: number, done: boolean) => {
+    try {
+      await axios.put(`/api/todos/${id}`, { done: !done });
+      setTodos(
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, done: !todo.done } : todo
+        )
+      );
+    } catch (error) {
+      console.error("Error completing todo:", error);
+    }
+  };
+
+  const removeTodo = async (id: number) => {
+    try {
+      await axios.delete(`/api/todos/${id}`);
+      setTodos(todos.filter((todo) => todo.id !== id));
+    } catch (error) {
+      console.error("Error deleting todo:", error);
+    }
   };
 
   const handleLogout = () => {
@@ -49,6 +77,7 @@ const ToDo: React.FC = () => {
 
   useEffect(() => {
     getUser();
+    fetchTodos();
   }, []);
 
   return (
@@ -57,10 +86,9 @@ const ToDo: React.FC = () => {
       <div className="w-full max-w-md mt-4">
         <h1 className="text-2xl font-bold text-center mb-4">ToDo App</h1>
         <TodoForm addTodo={addTodo} />
-        {todos.map((todo, index) => (
+        {todos.map((todo) => (
           <TodoItem
-            key={index}
-            index={index}
+            key={todo.id}
             todo={todo}
             completeTodo={completeTodo}
             removeTodo={removeTodo}
