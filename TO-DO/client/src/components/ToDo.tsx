@@ -86,14 +86,20 @@ const ToDo: React.FC = () => {
       <div className="w-full max-w-md mt-4">
         <h1 className="text-2xl font-bold text-center mb-4">ToDo App</h1>
         <TodoForm addTodo={addTodo} />
-        {todos.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            completeTodo={completeTodo}
-            removeTodo={removeTodo}
-          />
-        ))}
+        {todos.length === 0 ? (
+          <p className="text-center text-lg text-gray-700">
+            Hi {user?.firstName}, please add a todo list.
+          </p>
+        ) : (
+          todos.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              completeTodo={completeTodo}
+              removeTodo={removeTodo}
+            />
+          ))
+        )}
       </div>
     </div>
   );
