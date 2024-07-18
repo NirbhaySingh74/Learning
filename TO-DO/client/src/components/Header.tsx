@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-purple-500 to-blue-600 shadow p-4 flex justify-between items-center text-white gap-5">
+    <header className="bg-gradient-to-r my-2 from-purple-500 to-blue-600 shadow p-4 flex justify-between items-center text-white gap-5">
       <div className="flex items-center space-x-4">
         {user.avatar && (
           <img
