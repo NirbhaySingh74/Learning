@@ -1,6 +1,6 @@
 package DSA.BASICMATH;
 
-public class checkPalindrome {
+public class checkPAlindrome {
 
     public static boolean isPalindrome(int num) {
         int originalNum = num;
