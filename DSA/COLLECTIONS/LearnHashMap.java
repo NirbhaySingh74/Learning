@@ -29,9 +29,16 @@ public class LearnHashMap {
         // System.out.println(e.getKey());
         // System.out.println(e.getValue());
         // }
+
+        // get only keys and iterate on it
         Set<String> keys = map.keySet();
         for (String key : keys) {
-            System.out.println(key);
+            System.out.println(key + map.get(key));
         }
+
+        // remove key
+        map.remove("Nirbhay");
+
+        System.out.println(map);
     }
 }
