@@ -18,17 +18,25 @@ interface User {
   password: string;
 }
 
-type UpdateProps = Pick<User, "name" | "age" | "email">;
+// type UpdateProps = Pick<User, "name" | "age" | "email">;
 
-function updateUser(updatedProps: UpdateProps) {
-  console.log(updatedProps.email, updatedProps.age, updatedProps.name);
-}
+// function updateUser(updatedProps: UpdateProps) {
+//   console.log(updatedProps.email, updatedProps.age, updatedProps.name);
+// }
 
 // Example usage
-const userUpdate: UpdateProps = {
-  name: "John Doe",
-  age: 30,
-  email: "john.doe@example.com",
-};
+// const userUpdate: UpdateProps = {
+//   name: "John Doe",
+//   age: 30,
+//   email: "john.doe@example.com",
+// };
 
-updateUser(userUpdate);
+// updateUser(userUpdate);
+
+//partial
+type UpdateProps = Pick<User, "name" | "age" | "email">;
+type UpdatePropsOptional = Partial<UpdateProps>;
+function updateUser(updatedProps: UpdatePropsOptional) {
+  console.log(updatedProps?.email, updatedProps?.age, updatedProps.name);
+}
+updateUser({ name: "Nirbhay" });
