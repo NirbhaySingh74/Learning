@@ -34,4 +34,4 @@ function insertUserData(username, password, email) {
         console.log(result);
     });
 }
-insertUserData("user2", "123", "nirbhay12@gmail.com");
+insertUserData("testuser'); DROP TABLE users; --", "password123", "test@example.com");
