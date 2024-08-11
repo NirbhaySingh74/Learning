@@ -14,19 +14,24 @@ const pg_1 = require("pg");
 const client = new pg_1.Client({
     connectionString: "postgresql://postgres:Nirbhay@localhost/postgres",
 });
-function createUsersTable() {
+// async function createUsersTable() {
+// await client.connect();
+// const result = await client.query(`
+//       CREATE TABLE users2 (
+//           id SERIAL PRIMARY KEY,
+//           username VARCHAR(50) UNIQUE NOT NULL,
+//           email VARCHAR(255) UNIQUE NOT NULL,
+//           password VARCHAR(255) NOT NULL,
+//           created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+//       );
+//   `);
+function insertUserData(username, password, email) {
     return __awaiter(this, void 0, void 0, function* () {
         yield client.connect();
-        const result = yield client.query(`
-        CREATE TABLE users2 (
-            id SERIAL PRIMARY KEY,
-            username VARCHAR(50) UNIQUE NOT NULL,
-            email VARCHAR(255) UNIQUE NOT NULL,
-            password VARCHAR(255) NOT NULL,
-            created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-        );
-    `);
+        //sql injection
+        const result = yield client.query(`INSERT INTO users(username, password, email)
+    VALUES ($1, $2, $3)`, [username, password, email]);
         console.log(result);
     });
 }
-createUsersTable();
+insertUserData("user2", "123", "nirbhay12@gmail.com");
