@@ -6,6 +6,7 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+<<<<<<< HEAD
 
 model User {
   id       String  @id @default(uuid())
@@ -23,3 +24,5 @@ model Post {
   author    User    @relation(fields: [authorId], references: [id])
   authorId  String
 }
+=======
+>>>>>>> 5a940dd65af261e78a8d3b51abdfc6f596a86442
