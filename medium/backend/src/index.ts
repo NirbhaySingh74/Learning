@@ -13,14 +13,31 @@ app.post("/api/v1/signup", async (c) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
+
   const body = await c.req.json();
-  const user = await prisma.user.create({
-    data: {
-      email: body.email,
-      password: body.password,
-    },
-  });
+  let user;
+
+  try {
+    // Create user in the database
+    user = await prisma.user.create({
+      data: {
+        username: body.username,
+        password: body.password,
+      },
+    });
+  } catch (e) {
+    // Return an error response
+    c.status(411);
+    return c.text("Invalid");
+  } finally {
+    // Close the Prisma client
+    await prisma.$disconnect();
+  }
+
+  // Generate JWT token
   const token = sign({ id: user.id }, c.env.JWT_SECRET);
+
+  // Return the response with the JWT token
   return c.json({
     jwt: token,
   });
@@ -34,7 +51,7 @@ app.post("/api/v1/signin", async (c) => {
   const body = await c.req.json();
   const user = await prisma.user.findUnique({
     where: {
-      email: body.email,
+      username: body.username,
       password: body.password,
     },
   });
@@ -51,6 +68,9 @@ app.get("/api/v1/blog/:id", (c) => {
   const id = c.req.param("id");
   console.log(id);
   return c.text("get blog route");
+});
+app.get("/", (c) => {
+  return c.text("Hello Hono");
 });
 
 app.post("/api/v1/blog", async (c, next) => {
